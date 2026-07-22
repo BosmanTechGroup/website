@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from 'next/navigation';
+import { routing } from "@/src/i18n/routing";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import MaintenanceMode from "@/src/components/maintenance-mode";
+import MaintenancePage from "@/src/components/maintenance-page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,19 +41,36 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
     <html
-      lang="nl"
+      lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <main className="bg-slate-50 text-slate-900">
-          {children}
+          <NextIntlClientProvider>
+            {process.env.MAINTENANCE_MODE === "true" &&
+              process.env.MAINTENANCE_PAGE === "false" && <MaintenanceMode />}
+            {process.env.MAINTENANCE_PAGE === "true" && <MaintenancePage />}
+            {process.env.MAINTENANCE_PAGE !== "true" && children}
+          </NextIntlClientProvider>
+          <VercelAnalytics />
+          <SpeedInsights />
         </main>
       </body>
     </html>
