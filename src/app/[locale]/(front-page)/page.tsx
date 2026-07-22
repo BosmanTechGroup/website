@@ -8,6 +8,8 @@ import {
   Phone,
 } from "lucide-react";
 import { companyInfo } from "@/src/lib/data";
+import { useTranslations } from "next-intl";
+import { Link } from "@/src/i18n/navigation";
 
 const services = [
   {
@@ -40,6 +42,7 @@ const features = [
 ];
 
 export default function Home() {
+  const tBooking = useTranslations("Booking");
   return (
     <main className="bg-slate-50 text-slate-900">
       {/* HERO */}
@@ -215,12 +218,14 @@ export default function Home() {
             diagnose.
           </p>
 
-          <button className="mt-10 rounded-xl bg-white px-8 py-4 font-bold text-blue-600">
-            <span className="flex items-center gap-2">
-              <Phone size={18} />
-              Contact opnemen
-            </span>
-          </button>
+          <Link href="/booking">
+            <button className="mt-10 rounded-xl bg-white px-8 py-4 font-bold text-blue-600">
+              <span className="flex items-center gap-2">
+                <Phone size={18} />
+                {tBooking("meeting")}
+              </span>
+            </button>
+          </Link>
         </div>
       </section>
 
