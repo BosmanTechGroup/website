@@ -1,9 +1,12 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { companyInfo } from "@/src/lib/data";
-import Link from "next/dist/client/link";
-import Button from "./ui/Button";
+import { Link } from '@/src/i18n/navigation';
+import Button from "@/src/components/ui/button";
 
 export default function Header() {
+  const tHeader = useTranslations("Header");
+
   return (
     <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -17,16 +20,16 @@ export default function Header() {
           <Link href="/" className="hover:text-blue-600">
             Home
           </Link>
-          <Link href="#" className="hover:text-blue-600">
-            Diensten
+          <Link href="/services" className="hover:text-blue-600">
+            {tHeader("services")}
           </Link>
-          <Link href="#" className="hover:text-blue-600">
+          <Link href="/repairs" className="hover:text-blue-600">
             Reparaties
           </Link>
-          <Link href="/over-ons" className="hover:text-blue-600">
-            Over ons
+          <Link href="/about-us" className="hover:text-blue-600">
+            {tHeader("about-us")}
           </Link>
-          <Link href="#" className="hover:text-blue-600">
+          <Link href="/contact" className="hover:text-blue-600">
             Contact
           </Link>
         </div>
