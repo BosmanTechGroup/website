@@ -1,0 +1,60 @@
+{
+  "Header": {
+    "services": "Diensten",
+    "repairs": "Reparaties",
+    "about-us": "Over ons"
+  },
+  "NotFound": {
+    "message": "Oeps! De pagina die je zoekt bestaat niet.",
+    "home-link": "Terug naar de homepage"
+  },
+  "MaintenancePage": {
+    "title": "We zijn binnenkort terug",
+    "message": "Sorry voor het ongemak. Onze website is momenteel ondergaan geplande onderhoud om uw ervaring te verbeteren."
+  },
+  "MaintenanceMode": {
+    "title": "Onderhoudsmodus",
+    "message": "De website is momenteel in onderhoud. Sommige functies zijn mogelijk niet beschikbaar."
+  },
+  "User": {
+    "full-name": "Volledige naam",
+    "username": "Gebruikersnaam",
+    "password": "Wachtwoord",
+    "email": "E-mail",
+    "login": "Inloggen",
+    "forgot-password": "Wachtwoord vergeten?",
+    "reset-password": "Wachtwoord resetten",
+    "remember": "Onthouden",
+    "no-account": "Heeft u geen account?",
+    "existing-account": "Heeft u al een account?",
+    "register": "Registreren",
+    "remember-password": "Weet u uw wachtwoord?"
+  },
+  "Team": {
+    "team": "Ons Team",
+    "bio": "is een leidende provider van computer hardware en software oplossingen, die een breed scala aan diensten biedt om de behoeften van zowel bedrijven als particulieren te vervullen."
+  },
+  "Employees": [
+    {
+      "firstName": "Patrick",
+      "name": "Patrick Bosman",
+      "position": ["CEO", "Technicus"],
+      "bio": "Met meer dan drie decennia praktijkervaring is Patrick een toegewijde hardware technicus gespecialiseerd in computerhardware, gericht op het diagnosticeren van problemen, het onderhouden van betrouwbare systemen en het optimaal laten functioneren van apparatuur."
+    },
+    {
+      "firstName": "Peter",
+      "name": "Peter Bosman",
+      "position": ["Full Stack Developer", "IT Software Support Specialist"],
+      "bio": "Recent afgestudeerd met een graduaat's diploma in Programming is Peter een gepassioneerde programmeur en IT software support specialist, gepassioneerd om mensen te helpen en efficiënte en gebruikersvriendelijke toepassingen te creëren."
+    }
+  ],
+  "Booking": {
+    "meeting": "Boek een afspraak"
+  },
+  "Footer": {
+    "solutions": "Hardware & Software oplossingen.",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
+    "rights-reserved": "Alle rechten voorbehouden."
+  }
+}

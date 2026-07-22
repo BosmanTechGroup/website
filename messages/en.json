@@ -1,0 +1,60 @@
+{
+  "Header": {
+    "services": "Services",
+    "repairs": "Repairs",
+    "about-us": "About Us"
+  },
+  "NotFound": {
+    "message": "Oops! The page you are looking for does not exist.",
+    "home-link": "Back to Homepage"
+  },
+  "MaintenancePage": {
+    "title": "We'll be back soon",
+    "message": "Sorry for the inconvenience. Our website is currently undergoing scheduled maintenance to improve your experience."
+  },
+  "MaintenanceMode": {
+    "title": "Maintenance Mode",
+    "message": "The website is currently undergoing maintenance. Some features may be unavailable."
+  },
+  "User": {
+    "full-name": "Full Name",
+    "username": "Username",
+    "password": "Password",
+    "email": "Email",
+    "login": "Login",
+    "forgot-password": "Forgot Password?",
+    "reset-password": "Reset Password",
+    "remember": "Remember Me",
+    "no-account": "Don't have an account?",
+    "existing-account": "Already have an account?",
+    "register": "Register",
+    "remember-password": "Remember your password?"
+  },
+  "Team": {
+    "team": "Our Team",
+    "bio": "is a leading provider of computer hardware and software solutions, offering a wide range of services to meet the needs of businesses and individuals alike."
+  },
+  "Employees": [
+    {
+      "firstName": "Patrick",
+      "name": "Patrick Bosman",
+      "position": ["CEO", "Technician"],
+      "bio": "With over three decades of hands-on technical experience, Patrick is a dedicated hardware technician specializing in computer hardware, committed to diagnosing problems, maintaining reliable systems, and keeping equipment running at its best."
+    },
+    {
+      "firstName": "Peter",
+      "name": "Peter Bosman",
+      "position": ["Full Stack Developer", "IT Software Support Specialist"],
+      "bio": "Recently graduated with an associate's degree in Programming, Peter is a skilled developer and IT software support specialist, dedicated to helping people and creating efficient and user-friendly applications."
+    }
+  ],
+  "Booking": {
+    "meeting": "Book a Meeting"
+  },
+  "Footer": {
+    "solutions": "Hardware & Software Solutions.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights-reserved": "All rights reserved."
+  }
+}
