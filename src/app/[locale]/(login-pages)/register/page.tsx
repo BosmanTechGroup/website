@@ -1,7 +1,11 @@
+import { Email, Password } from "@/src/components/user-inputs";
 import { companyInfo } from "@/src/lib/data";
-import Link from "next/dist/client/link";
+import { Link } from "@/src/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Register() {
+  const tUser = useTranslations("User");
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-h-screen items-center justify-center">
       <div className="hidden md:block md:col-span-2 h-full">
@@ -20,7 +24,7 @@ export default function Register() {
             {companyInfo.name}
           </h1>
         </Link>
-        <h1 className="mb-6 text-center text-3xl font-bold">Register</h1>
+        <h1 className="mb-6 text-center text-3xl font-bold">{tUser("register")}</h1>
         <form className="space-y-4">
           <div>
             <label
@@ -29,41 +33,31 @@ export default function Register() {
             >
               Email
             </label>
-            <input
-              type="email"
-              id="email"
-              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-              required
-            />
+            <Email id="email" />
           </div>
           <div>
             <label
               htmlFor="password"
               className="block text-sm font-medium text-slate-700"
             >
-              Password
+              {tUser("password")}
             </label>
-            <input
-              type="password"
-              id="password"
-              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-              required
-            />
+            <Password id="password" />
           </div>
           <button
             type="submit"
             className="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50"
           >
-            Register
+            {tUser("register")}
           </button>
           <div className="mt-4 text-center">
-            <span className="text-sm text-slate-700">
-              Already have an account?{" "}
+            <span className="text-sm text-slate-700 gap-1 flex justify-center">
+              {tUser("existing-account")}
               <Link
                 href="/login"
                 className="font-medium text-blue-600 hover:text-blue-500"
               >
-                Login
+                {tUser("login")}
               </Link>
             </span>
           </div>

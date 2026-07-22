@@ -1,7 +1,12 @@
+import { Email, Password } from "@/src/components/user-inputs";
+import { Link } from "@/src/i18n/navigation";
 import { companyInfo } from "@/src/lib/data";
-import Link from "next/dist/client/link";
+
+import { useTranslations } from "next-intl";
 
 export default function Login() {
+  const tUser = useTranslations("User");
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-h-screen items-center justify-center">
       <div className="hidden md:block md:col-span-2 h-full">
@@ -20,35 +25,25 @@ export default function Login() {
             {companyInfo.name}
           </h1>
         </Link>
-        <h1 className="mb-6 text-center text-3xl font-bold">Login</h1>
+        <h1 className="mb-6 text-center text-3xl font-bold">{tUser("login")}</h1>
         <form className="space-y-4">
           <div>
             <label
               htmlFor="email"
               className="block text-sm font-medium text-slate-700"
             >
-              Email
+              {tUser("email")}
             </label>
-            <input
-              type="email"
-              id="email"
-              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-              required
-            />
+            <Email id="email" />
           </div>
           <div>
             <label
               htmlFor="password"
               className="block text-sm font-medium text-slate-700"
             >
-              Password
+              {tUser("password")}
             </label>
-            <input
-              type="password"
-              id="password"
-              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-              required
-            />
+            <Password id="password" />
           </div>
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center">
@@ -61,7 +56,7 @@ export default function Login() {
                 htmlFor="remember-me"
                 className="ml-2 block text-sm text-slate-700"
               >
-                Remember me
+                {tUser("remember")}
               </label>
             </div>
             <div className="text-sm">
@@ -69,7 +64,7 @@ export default function Login() {
                 href="/forgot-password"
                 className="font-medium text-blue-600 hover:text-blue-500"
               >
-                Forgot your password?
+                {tUser("forgot-password")}
               </Link>
             </div>
           </div>
@@ -80,13 +75,13 @@ export default function Login() {
             Login
           </button>
           <div className="mt-4 text-center">
-            <span className="text-sm text-slate-700">
-              Don&apos;t have an account?{" "}
+            <span className="text-sm text-slate-700 gap-1 flex justify-center">
+              {tUser("no-account")}
               <Link
                 href="/register"
                 className="font-medium text-blue-600 hover:text-blue-500"
               >
-                Register
+                {tUser("register")}
               </Link>
             </span>
           </div>
