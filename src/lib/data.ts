@@ -9,6 +9,8 @@ export const socialIcons = {
 };
 
 export const companyInfo = {
+  logo: "/logo.webp",
+  logoText: "/logo-text.webp",
   name: "Bosman Tech Group",
   description:
     "Bosman Tech Group is a leading provider of computer hardware and software solutions, offering a wide range of services to meet the needs of businesses and individuals alike.",
