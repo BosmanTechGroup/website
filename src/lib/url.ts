@@ -1,5 +1,5 @@
 export function url(path: string = ""): string {
-  let base = process.env.NEXT_PUBLIC_API_URL;
+  let base = process.env.NEXT_PUBLIC_BASE_URL;
 
   // If no base is provided, fallback to localhost
   if (!base) {
